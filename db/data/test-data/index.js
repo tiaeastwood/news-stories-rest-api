@@ -1,3 +1,7 @@
-const data = {topicData, articleData, userData, commentData}
+// require in the rest of the data the same way 
 
-module.exports = data
+exports.topicData = require('./topics')
+
+
+    //{ topicData, articleData, userData, commentData }
+

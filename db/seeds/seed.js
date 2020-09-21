@@ -1,3 +1,4 @@
+
 const {
   topicData,
   articleData,
@@ -5,6 +6,16 @@ const {
   userData,
 } = require('../data/index.js');
 
+console.log(topicData)
+
 exports.seed = function (knex) {
-  // add seeding functionality here
+  return knex.migrate
+    .rollback()
+    .then(() => knex.migrate.latest())
+    .then(() => {
+      return knex('topics')
+        .insert(topicData)
+        .returning('*');
+    })
+
 };

@@ -8,6 +8,6 @@ exports.up = function(knex) {
 };
 
 exports.down = function(knex) {
-  console.log('removing TOPICS table');
+  console.log('dropping TOPICS table');
   return knex.schema.dropTable('topics');
 };
