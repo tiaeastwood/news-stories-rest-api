@@ -6,7 +6,8 @@ const {
   userData,
 } = require('../data/index.js');
 
-console.log(topicData)
+
+console.log(articleData)
 
 exports.seed = function (knex) {
   return knex.migrate
@@ -15,7 +16,15 @@ exports.seed = function (knex) {
     .then(() => {
       return knex('topics')
         .insert(topicData)
-        .returning('*');
+        .returning('*')
+    }).then(()=> {
+      return knex('users')
+        .insert(userData)
+        .returning('*')
+    }).then(() => {
+      return knex('articles')
+      .insert(articleData)
+      .returning('*')
     })
 
 };
