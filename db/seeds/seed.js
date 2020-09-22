@@ -6,8 +6,8 @@ const {
   userData,
 } = require('../data/index.js');
 
+const { timestampConverter } = require('../utils/data-manipulation.js')
 
-console.log(articleData)
 
 exports.seed = function (knex) {
   return knex.migrate
@@ -23,7 +23,7 @@ exports.seed = function (knex) {
         .returning('*')
     }).then(() => {
       return knex('articles')
-      .insert(articleData)
+      .insert(timestampConverter(articleData))
       .returning('*')
     })
 
