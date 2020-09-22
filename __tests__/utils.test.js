@@ -13,11 +13,6 @@ describe('timeStampConverter', () => {
         const input  = [];
         expect(timestampConverter(input)).not.toBe(input);
     });
-    // it('returns the correct date', () => {
-    //     const input = 1492163783248;
-    //     const output = 'Fri, 14 Apr 2017 09:56:23 GMT';
-    //     expect(timestampConverter(input)).toEqual(output);
-    // })
     it('returns an object with the key value updated to the correct date', () => {
         const input = [{
             title: 'Running a Node App',
@@ -52,7 +47,8 @@ describe('timeStampConverter', () => {
         created_at: 'Wed, 17 Nov 2010 12:21:54 GMT',
       }
     ];
-          expect(timestampConverter(input)).toEqual(output);
+      expect(timestampConverter(input)).toEqual(output);
+      expect(timestampConverter(input)).not.toEqual(input);
     })
 
 })
