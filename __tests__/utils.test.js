@@ -2,7 +2,7 @@
 process.env.NODE_ENV = 'test';
 const { Connection } = require('pg');
 const request = require('supertest');
-const { timestampConverter } = require('../db/utils/data-manipulation')
+const { timestampConverter, addUsername } = require('../db/utils/data-manipulation')
 // const connection = require('connection path') for later
 // const app = require(app path) for later
 
@@ -51,6 +51,30 @@ describe('timeStampConverter', () => {
       expect(timestampConverter(input)).not.toEqual(input);
     })
 
+})
+
+describe.only('addUsername', () => {
+  test('the input is not mutated', () => {
+    const input  = [];
+    expect(addUsername(input)).not.toBe(input);
+  })
+  test('key is changed from created_by to author', () => {
+    const input = {
+      body: 'Itaque quisquam est similique et est perspiciatis reprehenderit voluptatem autem. Voluptatem accusantium eius error adipisci quibusdam doloribus.',
+      belongs_to: 'The People Tracking Every Touch, Pass And Tackle in the World Cup',
+      created_by: 'tickle122',
+      votes: -1,
+      created_at: 1468087638932,
+    }
+    const output = {
+      body: 'Itaque quisquam est similique et est perspiciatis reprehenderit voluptatem autem. Voluptatem accusantium eius error adipisci quibusdam doloribus.',
+      belongs_to: 'The People Tracking Every Touch, Pass And Tackle in the World Cup',
+      author: 'tickle122',
+      votes: -1,
+      created_at: 1468087638932,
+    }
+    expect(addUsername(input)).toEqual(output)
+  })
 })
 
 

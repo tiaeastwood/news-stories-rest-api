@@ -8,9 +8,12 @@ exports.up = function(knex) {
         commentsTable.integer('votes').defaultTo(0);
         commentsTable.timestamp('created_at').defaultTo(knex.fn.now());
         commentsTable.text('body').notNullable();
+       
+    
     })
 };
 
 exports.down = function(knex) {
-  
+    console.log('removing COMMENTS table');
+    return knex.schema.dropTable('comments');
 };

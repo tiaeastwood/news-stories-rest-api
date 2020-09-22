@@ -25,6 +25,9 @@ exports.seed = function (knex) {
       return knex('articles')
       .insert(timestampConverter(articleData))
       .returning('*')
-    })
-
+    }).then(() => {
+      return knex('comments')
+      .insert(timestampConverter(commentData))
+      .returning('*')
+  })
 };
