@@ -2,7 +2,7 @@
 process.env.NODE_ENV = 'test';
 const { Connection } = require('pg');
 const request = require('supertest');
-const { timestampConverter, addUsername } = require('../db/utils/data-manipulation')
+const { timestampConverter, renameKey } = require('../db/utils/data-manipulation')
 // const connection = require('connection path') for later
 // const app = require(app path) for later
 
@@ -53,29 +53,48 @@ describe('timeStampConverter', () => {
 
 })
 
-describe.only('addUsername', () => {
-  test('the input is not mutated', () => {
-    const input  = [];
-    expect(addUsername(input)).not.toBe(input);
-  })
+describe.only('renameKey', () => {
   test('key is changed from created_by to author', () => {
-    const input = {
+    const newKey = 'author'
+    const oldKey = 'created_by'
+
+    const input = [
+      {
       body: 'Itaque quisquam est similique et est perspiciatis reprehenderit voluptatem autem. Voluptatem accusantium eius error adipisci quibusdam doloribus.',
       belongs_to: 'The People Tracking Every Touch, Pass And Tackle in the World Cup',
       created_by: 'tickle122',
       votes: -1,
       created_at: 1468087638932,
-    }
-    const output = {
+    },
+    {
+      body: 'Facilis corporis animi et non non minus nisi. Magnam et sequi dolorum fugiat ab assumenda.',
+      belongs_to: 'Which current Premier League manager was the best player?',
+      created_by: 'tickle122',
+      votes: 12,
+      created_at: 1468201097851,
+      }
+    ];
+    
+    const output = [
+      {
       body: 'Itaque quisquam est similique et est perspiciatis reprehenderit voluptatem autem. Voluptatem accusantium eius error adipisci quibusdam doloribus.',
       belongs_to: 'The People Tracking Every Touch, Pass And Tackle in the World Cup',
       author: 'tickle122',
       votes: -1,
       created_at: 1468087638932,
-    }
-    expect(addUsername(input)).toEqual(output)
+    },
+    {
+      body: 'Facilis corporis animi et non non minus nisi. Magnam et sequi dolorum fugiat ab assumenda.',
+      belongs_to: 'Which current Premier League manager was the best player?',
+      author: 'tickle122',
+      votes: 12,
+      created_at: 1468201097851,
+      }
+    ];
+    expect(renameKey(newKey, oldKey, input)).toEqual(output)
+    expect(renameKey(newKey, oldKey, input)).not.toEqual(input);
   })
-})
 
+})
 
 

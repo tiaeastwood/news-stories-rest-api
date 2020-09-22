@@ -16,11 +16,46 @@ exports.timestampConverter = (dataArray) => {
     return updatedData;
 }
 
-exports.addUsername = (data) => {
-    let newData = {...data};
-    newData.author = newData.created_by
-    delete newData.created_by;
-    console.log(newData)
-    return newData;
+exports.renameKey = (newKey, oldKey, dataArray) => {
+    //console.log('datarray is', dataArray)
+    let newArray = [];   
+
+    for (let i = 0; i < dataArray.length; i++) {
+        let newData = { ...dataArray[i] };
+        newData[newKey] = newData[oldKey];
+        newArray.push(newData);
+        delete newData[oldKey];
+    }
+    return newArray;
 }
 
+// make a lookup function for article_id
+// needs to reference article table with - article name
+// and belongs_to key from comments table
+
+
+
+// exports.makeLookupObj = (array, desiredKey, desiredValue) => {
+//     return array.reduce((lookupObject, currentArrayObject) => {
+//         lookupObject[currentArrayObject[desiredKey]] =
+//             currentArrayObject[desiredValue];
+//         return lookupObject;
+//     }, {});
+// };
+
+// exports.makeShopData = (lookupObject, array) => {
+//     return array.map(currentArrayItem => {
+//         const newObj = { ...currentArrayItem };
+//         newObj.owner_id = lookupObject[currentArrayItem.owner];
+//         delete newObj.owner;
+//         return newObj;
+//     });
+// };
+
+// exports.makeTreasureData = (lookup, array) => {
+//     return array.map(currentArrayItem => {
+//         const newObj = { ...currentArrayItem };
+//         newObj.shop_id = lookup[currentArrayItem.shop];
+//         delete newObj.shop;
+//         return newObj;
+//     });
