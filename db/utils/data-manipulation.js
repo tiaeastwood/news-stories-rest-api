@@ -68,7 +68,7 @@ exports.formatComments = (commentsArr, refObj) => {
         //delete old keys that we don't want any more
         delete formattedComment.belongs_to;
         delete formattedComment.created_by;
-        return formattedComment;
+    return formattedComment;
     })
     return formattedComments;
 }
