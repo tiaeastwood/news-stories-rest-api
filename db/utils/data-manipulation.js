@@ -62,7 +62,6 @@ exports.formatComments = (commentsArr, refObj) => {
     const formattedComments = commentsArr.map((comment) => {
 
         //copy in the contents of each comment and add our desired keys of author and article_id to create a formatted comment
-        console.log(comment.belongs_to)
         const formattedComment = {
             ...comment,
             author: comment.created_by,
@@ -73,7 +72,6 @@ exports.formatComments = (commentsArr, refObj) => {
         delete formattedComment.created_by;
     return formattedComment;
     })
-    console.log(formattedComments)
     return formattedComments;
 }
 
