@@ -2,7 +2,7 @@
 process.env.NODE_ENV = 'test';
 const { connection } = require('pg');
 const request = require('supertest');
-const { timestampConverter, renameKey, makeRefObj } = require('../db/utils/data-manipulation')
+const { timestampConverter, renameKey, makeRefObj, formatComments } = require('../db/utils/data-manipulation')
 // const connection = require('connection path') for later
 // const app = require(app path) for later
 // afterAll(()=>connection.destroy());
@@ -89,3 +89,46 @@ describe('makeRefObj', () => {
 });
 
 
+describe('formatComments', () => {
+  it('returns new array, does not mutate original', () => {
+    const commentsArr = [{
+      body: 'Itaque quisquam est similique et est perspiciatis reprehenderit voluptatem autem. Voluptatem accusantium eius error adipisci quibusdam doloribus.',
+      belongs_to: 'The People Tracking Every Touch, Pass And Tackle in the World Cup',
+      created_by: 'tickle122',
+      votes: -1,
+      created_at: 1468087638932,
+    },
+    {
+      body: 'Nobis consequatur animi. Ullam nobis quaerat voluptates veniam.',
+      belongs_to: 'Making sense of Redux',
+      created_by: 'grumpy19',
+      votes: 7,
+      created_at: 1478813209256,
+    }];
+    const refObj = { 'funny article name': 1 }
+    expect(formatComments(commentsArr, refObj)).not.toEqual(commentsArr)
+  });
+  
+  it('returns formatted comments', () => {
+
+    const commentsArr = [{
+      body: 'Itaque quisquam est similique et est perspiciatis reprehenderit voluptatem autem. Voluptatem accusantium eius error adipisci quibusdam doloribus.',
+      belongs_to: 'The People Tracking Every Touch, Pass And Tackle in the World Cup',
+      created_by: 'tickle122',
+      votes: -1,
+      created_at: 1468087638932,
+    }];
+    
+    const formattedComments = [{
+        body: 'Itaque quisquam est similique et est perspiciatis reprehenderit voluptatem autem. Voluptatem accusantium eius error adipisci quibusdam doloribus.',
+        votes: -1,
+        created_at: 1468087638932,
+        author: 'tickle122',
+        A: 1
+      }];
+    
+    const refObj = { A: 1 }
+
+    expect(formatComments(commentsArr, refObj)).toEqual(formattedComments)
+  })
+});
