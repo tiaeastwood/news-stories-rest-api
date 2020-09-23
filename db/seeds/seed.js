@@ -26,9 +26,10 @@ exports.seed = function (knex) {
       .insert(timestampConverter(articleData))
       .returning('*')
     }).then((articles) => {
-      console.log(articles)
+      const objRef = makeRefObj(articles, 'title', 'article_id');
+      const formattedComments = formatComments(commentData, objRef);
       return knex('comments')
-      .insert(timestampConverter(commentData))
+      .insert(timestampConverter(formattedComments))
       .returning('*')
   })
 };
