@@ -1,5 +1,7 @@
 // extract any functions you are using to manipulate your data, into this file
 
+const comments = require('../data/development-data/comments');
+
 exports.timestampConverter = (dataArray) => {
     let updatedData = [];
      
@@ -8,7 +10,7 @@ exports.timestampConverter = (dataArray) => {
     for (let i = 0; i < dataArray.length; i++) {
         let newDataObj = { ...dataArray[i] };
         let newDate = new Date(newDataObj.created_at);
-        let dateString = newDate.toUTCString();
+        let dateString = newDate.toGMTString();
         newDataObj.created_at = dateString;
 
         updatedData.push(newDataObj);
@@ -38,11 +40,11 @@ exports.renameKey = (newKey, oldKey, dataArray) => {
 
 // each comment object has a key of belongs_to, of which the value is the article title
 
-exports.makeRefObj = (array, desiredKey, desiredValue) => {
+exports.makeRefObj = (array, desiredKey, keyThatWillBecomeValue) => {
     const refObj = {};
     
     array.forEach((itemInArray) => {
-        refObj[itemInArray[desiredKey]] = itemInArray[desiredValue];
+        refObj[itemInArray[desiredKey]] = itemInArray[keyThatWillBecomeValue];
     });
     return refObj;
 };
@@ -60,6 +62,7 @@ exports.formatComments = (commentsArr, refObj) => {
     const formattedComments = commentsArr.map((comment) => {
 
         //copy in the contents of each comment and add our desired keys of author and article_id to create a formatted comment
+        console.log(comment.belongs_to)
         const formattedComment = {
             ...comment,
             author: comment.created_by,
@@ -70,5 +73,8 @@ exports.formatComments = (commentsArr, refObj) => {
         delete formattedComment.created_by;
     return formattedComment;
     })
+    console.log(formattedComments)
     return formattedComments;
 }
+
+// 'Making sense of Redux': 4,

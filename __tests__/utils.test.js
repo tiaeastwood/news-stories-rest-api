@@ -113,21 +113,43 @@ describe('formatComments', () => {
 
     const commentsArr = [{
       body: 'Itaque quisquam est similique et est perspiciatis reprehenderit voluptatem autem. Voluptatem accusantium eius error adipisci quibusdam doloribus.',
-      belongs_to: 'The People Tracking Every Touch, Pass And Tackle in the World Cup',
+      belongs_to: 'A BRIEF HISTORY OF FOOD—NO BIG DEAL',
       created_by: 'tickle122',
       votes: -1,
-      created_at: 1468087638932,
+      //created_at: 1468087638932,
     }];
     
     const formattedComments = [{
         body: 'Itaque quisquam est similique et est perspiciatis reprehenderit voluptatem autem. Voluptatem accusantium eius error adipisci quibusdam doloribus.',
         votes: -1,
-        created_at: 1468087638932,
+        //created_at: 1468087638932,
         author: 'tickle122',
-        A: 1
+        article_id: 29
       }];
     
-    const refObj = { A: 1 }
+    const data = [
+      {
+        article_id: 29,
+        title: 'A BRIEF HISTORY OF FOOD—NO BIG DEAL',
+        body: "n 1686, the croissant was invented in Austria. That's a fun fact I'd probably.",
+        votes: 0,
+        topic: 'cooking',
+        author: 'tickle122',
+        //created_at: 2017 - 03 - 11T13: 20: 18.000Z
+      },
+      {
+        article_id: 30,
+        title: 'Twice-Baked Butternut Squash Is the Thanksgiving Side Dish of Your Dreams',
+        body: "What if, for once, your Thanksgiving sides were just as dazzling as the centerpiece turkey? Imagine a world where prese",
+        votes: 0,
+        topic: 'cooking',
+        author: 'jessjelly',
+        //created_at: 
+        
+      },
+    ]
+
+    const refObj = makeRefObj(data, 'title', 'article_id')
 
     expect(formatComments(commentsArr, refObj)).toEqual(formattedComments)
   })

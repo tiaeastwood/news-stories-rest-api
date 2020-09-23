@@ -6,7 +6,7 @@ const {
   userData,
 } = require('../data/index.js');
 
-const { timestampConverter } = require('../utils/data-manipulation.js')
+const { timestampConverter, renameKey, makeRefObj, formatComments  } = require('../utils/data-manipulation.js')
 
 
 exports.seed = function (knex) {
@@ -25,7 +25,8 @@ exports.seed = function (knex) {
       return knex('articles')
       .insert(timestampConverter(articleData))
       .returning('*')
-    }).then(() => {
+    }).then((articles) => {
+      console.log(articles)
       return knex('comments')
       .insert(timestampConverter(commentData))
       .returning('*')

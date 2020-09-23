@@ -1,7 +1,7 @@
 module.exports = [
   {
     body: 'Itaque quisquam est similique et est perspiciatis reprehenderit voluptatem autem. Voluptatem accusantium eius error adipisci quibusdam doloribus.',
-    belongs_to: 'The People Tracking Every Touch, Pass And Tackle in the World Cup',
+    belongs_to: 'The People Tracking Every Touch, Pass And Tackle in the World Cup', 
     created_by: 'tickle122',
     votes: -1,
     created_at: 1468087638932,
