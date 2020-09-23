@@ -30,32 +30,20 @@ exports.renameKey = (newKey, oldKey, dataArray) => {
 }
 
 // make a lookup function for article_id
-// needs to reference article table with - article name
-// and belongs_to key from comments table
+// needs to reference title from articles table...
+// ...and belongs_to key from comments table
+// update comments.belongs_to with article_id
 
+exports.makeRefObj = (array, desiredKey, desiredValue) => {
+    const refObj = {};
+    
+    array.forEach((itemInArray) => {
+        refObj[itemInArray[desiredKey]] = itemInArray[desiredValue];
+    });
+    console.log(refObj)
+    return refObj;
+};
 
+//same as saying:
+//refObj[itemInArray.title] = itemInArray.article_id
 
-// exports.makeLookupObj = (array, desiredKey, desiredValue) => {
-//     return array.reduce((lookupObject, currentArrayObject) => {
-//         lookupObject[currentArrayObject[desiredKey]] =
-//             currentArrayObject[desiredValue];
-//         return lookupObject;
-//     }, {});
-// };
-
-// exports.makeShopData = (lookupObject, array) => {
-//     return array.map(currentArrayItem => {
-//         const newObj = { ...currentArrayItem };
-//         newObj.owner_id = lookupObject[currentArrayItem.owner];
-//         delete newObj.owner;
-//         return newObj;
-//     });
-// };
-
-// exports.makeTreasureData = (lookup, array) => {
-//     return array.map(currentArrayItem => {
-//         const newObj = { ...currentArrayItem };
-//         newObj.shop_id = lookup[currentArrayItem.shop];
-//         delete newObj.shop;
-//         return newObj;
-//     });
