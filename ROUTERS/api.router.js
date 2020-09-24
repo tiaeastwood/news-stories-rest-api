@@ -7,5 +7,4 @@ apiRouter.use('/topics', topicsRouter);
 apiRouter.use('/users', usersRouter);
 
 
-
 module.exports = apiRouter;

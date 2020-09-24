@@ -40,7 +40,7 @@ describe('/api', () => {
     });
     describe('/api/users/:username', () => {
         describe('GET', () => {
-            it('GET username responds with a status of 200 & 1 user object', () => {
+            it('200: responds with a status of 200 & requested user object', () => {
                 return request(app)
                     .get('/api/users/butter_bridge')
                     .expect(200)
@@ -54,6 +54,29 @@ describe('/api', () => {
                         );
                     });
             });
+            it('404: incorrect path responds with status 404 path not found', () => {
+                return request(app)
+                    .get('/api/losers/butter_bridge')
+                    .expect(404)
+                    .then(({ body: { msg } }) => {
+                        expect(msg).toBe("path not found");
+                    });
+            })
+            it('404: username could be valid does not exist', () => {
+                return request(app)
+                    .get('/api/users/codebob_codepants')
+                    .expect(404)
+                    .then(({ body: { msg } }) => {
+                        expect(msg).toBe("user not found");
+                    });
+            })
         });
     });
+    describe('/api/articles/:article_id', () => {
+        describe('DELETE', () => {
+            it('deletes an article by id', () => {
+                
+            })
+        })
+    })
 });
