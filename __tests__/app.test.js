@@ -74,9 +74,21 @@ describe('/api', () => {
     });
     describe('/api/articles/:article_id', () => {
         describe('DELETE', () => {
-            it('deletes an article by id', () => {
-                
+            it('204: deletes articles by id & returns 204 with no content', () => {
+                return request(app)
+                    .del('/api/articles/1')
+                    .expect(204)
+            })
+        });
+        describe('GET', () => {
+            it('200: returns status 200 & desired article by id', () => {
+                return request(app)
+                    .get('/api/articles/2')
+                    .expect(200)
+                    .then(({ body: { msg } }) => {
+                        expect(msg).toBe("user not found");
+                    });
             })
         })
-    })
+    });
 });

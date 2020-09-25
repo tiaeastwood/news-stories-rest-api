@@ -1,6 +1,6 @@
 const knex = require('../db/connection');
 
-exports.fetchUserById = (username) => {
+exports.fetchUserByUsername = (username) => {
 
     return knex
         .select(
@@ -11,7 +11,6 @@ exports.fetchUserById = (username) => {
         .from("users")
         .where("users.username", username)
         .then((usersArr) => {
-            console.log(usersArr)
             if (usersArr.length === 0) {
                 return Promise.reject({ status: 404, msg: 'user not found'})
             } else {
