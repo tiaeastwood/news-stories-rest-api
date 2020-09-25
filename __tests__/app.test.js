@@ -121,6 +121,15 @@ describe('/api', () => {
                         expect(res.body.article.votes).toEqual(105);
                     })
             })
+            it('400 bad request: if trying to patch article with invalid information', () => {
+                return request(app)
+                    .patch('/api/articles/1')
+                    .send({ inc_votes: 'banana' })
+                    .expect(400)
+                    .then((({ body: { msg } }) => {
+                        expect(msg).toBe('invalid data provided')
+                    }))
+            })
         });
     });
 });
