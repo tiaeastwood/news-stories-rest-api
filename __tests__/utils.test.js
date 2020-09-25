@@ -1,11 +1,6 @@
-// created_at: 1492163783248
+
 process.env.NODE_ENV = 'test';
-const { connection } = require('pg');
-const request = require('supertest');
 const { timestampConverter, renameKey, makeRefObj, formatComments } = require('../db/utils/data-manipulation')
-// const connection = require('connection path') for later
-// const app = require(app path) for later
-// afterAll(()=>connection.destroy());
 
 
 describe('timeStampConverter', () => {
@@ -144,7 +139,7 @@ describe('formatComments', () => {
         votes: 0,
         topic: 'cooking',
         author: 'jessjelly',
-        //created_at: 
+        //created_at: new Date()
         
       },
     ]

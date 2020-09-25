@@ -102,6 +102,25 @@ describe('/api', () => {
                         expect(msg).toBe("article not found");
                     });
             })
+            it('400: bad request - GET article with article_id that is not a number', () => {
+                return request(app)
+                    .get('/api/articles/banana')
+                    .expect(400)
+                    .then(({ body: { msg } }) => {
+                        expect(msg).toBe("Bad request! article_id should be a number!");
+                    });
+            })
         })
+        describe('PATCH', () => {
+            it('202 accepted: patches an article to increment the vote number', () => {
+                return request(app)
+                    .patch('/api/articles/1')
+                    .send({ inc_votes: 5 })
+                    .expect(202)
+                    .then((res) => {
+                        expect(res.body.article.votes).toEqual(105);
+                    })
+            })
+        });
     });
 });
