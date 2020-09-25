@@ -9,12 +9,12 @@ beforeEach(() => connection.seed.run());
 describe('/api', () => {
     describe('/api/topics', () => {
         describe('GET', () => {
-            it('GET responds with a status of 200', () => {
+            it('200: responds with a status of 200', () => {
                 return request(app)
                     .get('/api/topics')
                     .expect(200)
             });
-            it('GET responds with requested data', () => {
+            it('200: responds with requested data', () => {
                 return request(app)
                     .get('/api/topics')
                     .then((res) => {
@@ -22,14 +22,14 @@ describe('/api', () => {
                         expect(res.body.topics.length).toBe(3);
                     })
             });
-            it('GET to incorrect path responds path not found', () => {
+            it('404: to incorrect path responds path not found', () => {
                 return request(app)
                     .get('/apt').expect(404)
                     .then((res) => {
                         expect(res.body.msg).toEqual('path not found')
                     })
             })
-            it('GET to /api/topics responds with 404 path not found if topics spelled incorrectly', () => {
+            it('404: responds with 404 path not found if topics spelled incorrectly', () => {
                 return request(app)
                     .get('/api/tropics').expect(404)
                     .then((res) => {
@@ -74,10 +74,15 @@ describe('/api', () => {
     });
     describe('/api/articles/:article_id', () => {
         describe('DELETE', () => {
-            it('204: deletes articles by id & returns 204 with no content', () => {
+            it('204: deletes article by id & returns 204. Trying to GET deleted article will result in 404', () => {
                 return request(app)
                     .del('/api/articles/1')
                     .expect(204)
+                    .then(() => {
+                        return request(app)
+                            .get('/api/articles/1')
+                            .expect(404)
+                    })
             })
         });
         describe('GET', () => {
@@ -85,8 +90,16 @@ describe('/api', () => {
                 return request(app)
                     .get('/api/articles/2')
                     .expect(200)
+                    .then((res) => {
+                        expect(res.body.article.title).toEqual('Sony Vaio; or, The Laptop');
+                    });
+            })
+            it('404: GET article that does not exist results in 404', () => {
+                return request(app)
+                    .get('/api/articles/100')
+                    .expect(404)
                     .then(({ body: { msg } }) => {
-                        expect(msg).toBe("user not found");
+                        expect(msg).toBe("article not found");
                     });
             })
         })
