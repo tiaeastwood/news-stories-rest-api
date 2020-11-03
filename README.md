@@ -1,0 +1,165 @@
+# News API
+
+API containing articles, topics, comments and users data. Created with postgreSQL database and express server. 
+Test driven development using Jest test suite.
+🎨[Link to the frontend code for the React app](https://github.com/tiaeastwood/seddit)
+
+---
+
+## GET /api/topics
+Example response 
+```
+   {
+              topics: [
+                {
+                  slug: String,
+                  description: String,
+                }
+              ]
+            }
+```
+
+## GET /api/articles
+Accepted Queries:
+- sort_by (defaults to created_at)
+- order (defaults to desc)
+- author
+- topic
+
+Example response:
+```
+            {
+              articles: [
+                {
+                  article_id: Number,
+                  title: String,
+                  body: String,
+                  topic: String,
+                  author: String,
+                  votes: Number,
+                  created_at: String,
+                  comment_count: String
+                }
+              ]
+            }
+```
+
+## GET /api/articles/:article_id
+Example response:
+```
+            {
+              article: {
+                article_id: Number,
+                title: String,
+                body: String,
+                topic: String,
+                author: String,
+                votes: Number,
+                created_at: String,
+                comment_count: String
+              }
+            }
+```
+
+## PATCH /api/articles/:article_id
+Example request: 
+```
+{ inc_votes: 1 }
+```
+Example response:
+```
+            {
+              article: {
+                article_id: Number,
+                title: String,
+                body: String,
+                topic: String,
+                author: String,
+                votes: Number,
+                created_at: String,
+                comment_count: String
+              }
+            }
+```
+## GET /api/articles/:article_id/comments
+Accepted queries
+- sort_by (defaults to created_at)
+- order (defaults to desc)
+
+Example response:
+```
+            {
+              comments: [
+              {
+                comment_id: Number,
+                  body: String,
+                  article_id: Number,
+                  author: String,
+                  votes: Number,
+                  created_at: String
+                }
+              ]
+            }
+```
+
+## POST /api/articles/:article_id/comments
+Example request:
+```
+            {
+              body: String,
+              username: String
+            }
+```
+Example response:
+```
+            {
+              comment: {
+                comment_id: Number,
+                body: String,
+                article_id: Number,
+                author: String,
+                votes: Number,
+                created_at: String
+              }
+            }
+```
+
+## PATCH /api/comments/:comment_id
+Example request:
+```
+{ inc_votes: 1 }
+```
+Example response:
+```
+            {
+              comment: {
+                comment_id: Number,
+                body: String,
+                article_id: Number,
+                author: String,
+                votes: Number,
+                created_at: String
+              }
+            }
+```
+
+## DELETE /api/comments/:comment_id
+Example response:
+```
+{}
+```
+
+## GET /api/users/:username
+Example response:
+```
+            {
+              user: {
+                username: String,
+                name: String,
+                avatar_url: String
+              }
+            }
+```
+
+
+
