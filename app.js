@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const apiRouter = require('./ROUTERS/api.router');
+const apiRouter = require('./routers/api.router');
 const { handleInvalidPath, handleCustoms, handle500s } = require('./errors')
 
 

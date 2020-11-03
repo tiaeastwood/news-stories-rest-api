@@ -12,7 +12,6 @@ exports.timestampConverter = (dataArray) => {
         let newDate = new Date(newDataObj.created_at);
         let dateString = newDate.toGMTString();
         newDataObj.created_at = dateString;
-
         updatedData.push(newDataObj);
     }
     return updatedData;
@@ -75,4 +74,3 @@ exports.formatComments = (commentsArr, refObj) => {
     return formattedComments;
 }
 
-// 'Making sense of Redux': 4,

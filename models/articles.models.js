@@ -1,5 +1,12 @@
 const knex = require('../db/connection');
 
+
+exports.fetchAllArticles = () => {
+    return knex
+        .select('*')
+        .from('articles')
+}
+
 exports.removeArticle = (sentArticleId) => {
     return knex
         .select('*')

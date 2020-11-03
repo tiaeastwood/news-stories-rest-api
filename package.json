@@ -9,7 +9,9 @@
     "migrate-latest": "knex migrate:latest",
     "migrate-rollback": "knex migrate:rollback",
     "seed": "knex seed:run",
-    "test": "jest app.test.js"
+    "test": "jest app.test.js",
+    "dev": "nodemon listen.js",
+    "start": "node listen.js"
   },
   "repository": {
     "type": "git",
@@ -23,8 +25,12 @@
   },
   "homepage": "https://github.com/northcoders/be-nc-news#readme",
   "dependencies": {
+    "chai": "^4.2.0",
+    "chai-sorted": "^0.2.0",
     "express": "^4.17.1",
     "knex": "^0.21.5",
+    "mocha": "^8.2.1",
+    "nodemon": "^2.0.6",
     "pg": "^8.3.3",
     "supertest": "^4.0.2"
   },
