@@ -149,6 +149,20 @@ Example response:
 {}
 ```
 
+## GET /api/users
+Example response:
+```
+           {
+            users: [               
+              {
+                username: String,
+                name: String,
+                avatar_url: String
+              }
+            ]           
+           }
+```
+
 ## GET /api/users/:username
 Example response:
 ```
