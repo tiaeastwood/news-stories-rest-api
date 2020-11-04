@@ -6,7 +6,7 @@ const {
   userData,
 } = require('../data/index.js');
 
-const { timestampConverter, renameKey, makeRefObj, formatComments  } = require('../utils/data-manipulation.js')
+const { timestampConverter, makeRefObj, formatComments  } = require('../utils/data-manipulation.js')
 
 
 exports.seed = function (knex) {

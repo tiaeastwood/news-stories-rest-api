@@ -6,6 +6,7 @@ module.exports = [
     body: 'I find this existence challenging',
     created_at: 1542284514171,
     votes: 100,
+    article_img_url: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1052&q=80'
   },
   {
     title: 'Sony Vaio; or, The Laptop',

@@ -39,13 +39,15 @@ describe("/api", () => {
     });
   });
   describe("/api/users", () => {
-    it("200: responds with a status of 200 & an array of user objects on key of users", () => {
-      return request(app)
-        .get("/api/users")
-        .expect(200)
-        .then((res) => {
-          expect(res.body.users.length).toEqual(4);
-        });
+    describe("GET", () => {
+      it("200: responds with a status of 200 & an array of user objects on key of users", () => {
+        return request(app)
+          .get("/api/users")
+          .expect(200)
+          .then((res) => {
+            expect(res.body.users.length).toEqual(4);
+          });
+      });
     });
   });
   describe("/api/users/:username", () => {
@@ -82,13 +84,15 @@ describe("/api", () => {
     });
   });
   describe("/api/articles", () => {
-    it("200: responds with status 200 and array of articles on key of articles", () => {
-      return request(app)
-        .get("/api/articles")
-        .expect(200)
-        .then((res) => {
-          expect(res.body.articles.length).toEqual(12);
-        });
+    describe("GET", () => {
+      it("200: responds with status 200 and array of articles on key of articles", () => {
+        return request(app)
+          .get("/api/articles")
+          .expect(200)
+          .then((res) => {
+            expect(res.body.articles.length).toEqual(12);
+          });
+      });
     });
   });
   describe("/api/articles/:article_id", () => {

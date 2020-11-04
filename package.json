@@ -1,7 +1,7 @@
 {
-  "name": "be-nc-news",
+  "name": "nc-news",
   "version": "1.0.0",
-  "description": "bc-nc-news",
+  "description": "nc-news",
   "main": "index.js",
   "scripts": {
     "setup-dbs": "psql -f ./db/setup.sql",
@@ -25,7 +25,6 @@
   },
   "homepage": "https://github.com/northcoders/be-nc-news#readme",
   "dependencies": {
-    "chai-sorted": "^0.2.0",
     "express": "^4.17.1",
     "knex": "^0.21.5",
     "nodemon": "^2.0.6",
