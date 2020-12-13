@@ -1,7 +1,7 @@
 {
-  "name": "seddit_api",
+  "name": "nc_news_api",
   "version": "1.0.0",
-  "description": "a news stories api",
+  "description": "an example nc-news api",
   "main": "listen.js",
   "scripts": {
     "setup-dbs": "psql -f db/setup.sql",
