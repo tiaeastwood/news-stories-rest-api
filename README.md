@@ -1,4 +1,4 @@
-# News API
+# News Stories API
 
 News API (similar to Reddit) containing articles, topics, comments and users data.
 
