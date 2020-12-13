@@ -1,10 +1,21 @@
 # News API
 
-API containing articles, topics, comments and users data. Created with postgreSQL database and express server. 
-Test driven development using Jest test suite.
-🎨[Link to the frontend code for the React app](https://github.com/tiaeastwood/seddit)
+News API (similar to Reddit) containing articles, topics, comments and users data.
+
+## Tech
+- postgress (pg)
+- express
+- knex
+- nodemon
+- Jest
+- supertest
+
+## Frontend
+- 🎨[Link to the frontend code repository, built with React](https://github.com/tiaeastwood/seddit)
 
 ---
+
+# API Endpoints
 
 ## GET /api/topics
 Example response 
