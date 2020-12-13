@@ -7,7 +7,6 @@ module.exports = [
     body:
       'This is part two of a series on how to get up and running with Systemd and Node.js. This part dives deeper into how to successfully run your app with systemd long-term, and how to set it up in a production environment.',
     created_at: 1471522072389,
-    article_img_url: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1052&q=80'
   },
   {
     title: "The Rise Of Thinking Machines: How IBM's Watson Takes On The World",
