@@ -1,7 +1,7 @@
 {
-  "name": "nc-news",
+  "name": "seddit-api",
   "version": "1.0.0",
-  "description": "nc-news",
+  "description": "seddit-api",
   "main": "index.js",
   "scripts": {
     "setup-dbs": "psql -f ./db/setup.sql",
@@ -11,11 +11,11 @@
     "seed": "knex seed:run",
     "test": "jest app.test.js",
     "dev": "nodemon listen.js",
-    "start": "node listen.js"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/northcoders/be-nc-news.git"
+    "url": "https://github.com/tiaeastwood/seddit-backend"
   },
   "keywords": [],
   "author": "",
@@ -23,7 +23,7 @@
   "bugs": {
     "url": "https://github.com/northcoders/be-nc-news/issues"
   },
-  "homepage": "https://github.com/northcoders/be-nc-news#readme",
+  "homepage": "https://github.com/tiaeastwood/seddit-backend#readme",
   "dependencies": {
     "express": "^4.17.1",
     "knex": "^0.21.5",

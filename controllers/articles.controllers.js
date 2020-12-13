@@ -27,7 +27,6 @@ exports.patchArticleById = (req, res, next) => {
     let { article_id } = req.params;
     let { inc_votes } = req.body;
     updateArticleById(article_id, inc_votes).then((article) => {
-        console.log('article in controller', article)
         res.status(202).send({ article })
     }).catch(next)
 }

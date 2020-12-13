@@ -111,13 +111,11 @@ describe('formatComments', () => {
       belongs_to: 'A BRIEF HISTORY OF FOOD—NO BIG DEAL',
       created_by: 'tickle122',
       votes: -1,
-      //created_at: 1468087638932,
     }];
     
     const formattedComments = [{
         body: 'Itaque quisquam est similique et est perspiciatis reprehenderit voluptatem autem. Voluptatem accusantium eius error adipisci quibusdam doloribus.',
         votes: -1,
-        //created_at: 1468087638932,
         author: 'tickle122',
         article_id: 29
       }];
@@ -130,7 +128,6 @@ describe('formatComments', () => {
         votes: 0,
         topic: 'cooking',
         author: 'tickle122',
-        //created_at: 2017 - 03 - 11T13: 20: 18.000Z
       },
       {
         article_id: 30,
@@ -139,8 +136,6 @@ describe('formatComments', () => {
         votes: 0,
         topic: 'cooking',
         author: 'jessjelly',
-        //created_at: new Date()
-        
       },
     ]
 
