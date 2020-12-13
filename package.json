@@ -11,7 +11,7 @@
     "seed": "knex seed:run",
     "test": "jest app.test.js",
     "dev": "nodemon listen.js",
-    "start": "node index.js"
+    "start": "node listen.js"
   },
   "repository": {
     "type": "git",
