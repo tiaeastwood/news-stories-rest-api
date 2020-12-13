@@ -1,40 +1,31 @@
 {
-  "name": "seddit-api",
+  "name": "seddit_api",
   "version": "1.0.0",
-  "description": "seddit-api",
-  "main": "index.js",
+  "description": "a news stories api",
+  "main": "listen.js",
   "scripts": {
-    "setup-dbs": "psql -f ./db/setup.sql",
-    "migrate-make": "knex migrate:make",
-    "migrate-latest": "knex migrate:latest",
-    "migrate-rollback": "knex migrate:rollback",
+    "setup-dbs": "psql -f db/setup.sql",
+    "test": "mocha ./spec/*.spec.js",
     "seed": "knex seed:run",
-    "test": "jest app.test.js",
     "dev": "nodemon listen.js",
-    "start": "node listen.js",
     "seed:prod": "NODE_ENV=production DB_URL=$(heroku config:get DATABASE_URL) knex seed:run",
     "migrate-latest:prod": "NODE_ENV=production DB_URL=$(heroku config:get DATABASE_URL) knex migrate:latest",
-    "migrate-rollback:prod": "NODE_ENV=production DB_URL=$(heroku config:get DATABASE_URL) knex migrate:rollback"
+    "migrate-rollback:prod": "NODE_ENV=production DB_URL=$(heroku config:get DATABASE_URL) knex migrate:rollback",
+    "start": "node listen.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/tiaeastwood/seddit-backend"
-  },
-  "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/northcoders/be-nc-news/issues"
-  },
-  "homepage": "https://github.com/tiaeastwood/seddit-backend#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "knex": "^0.21.5",
-    "nodemon": "^2.0.6",
-    "pg": "^8.3.3",
-    "supertest": "^4.0.2"
+    "pg": "^8.3.2"
   },
   "devDependencies": {
-    "jest": "^26.4.2"
+    "chai": "^4.2.0",
+    "chai-sorted": "^0.2.0",
+    "mocha": "^6.2.0",
+    "nodemon": "^1.19.2",
+    "supertest": "^4.0.2"
   }
 }
