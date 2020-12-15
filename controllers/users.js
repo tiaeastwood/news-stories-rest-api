@@ -11,5 +11,3 @@ exports.getAllUsers = async (req, res) => {
   return res.send({ users });
 };
 
-
-
