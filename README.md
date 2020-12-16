@@ -1,6 +1,8 @@
 # News Stories API
 
-News API (similar to Reddit) containing articles, topics, comments and users data.
+News article API containing articles, topics, comments and users data.
+This project uses psql to create a database that is seeded using queries via knex.
+I have set up API endpoints so that the data can be accessed by my [frontend application](https://github.com/tiaeastwood/seddit).
 
 ## Tech
 - SQL Postgress (pg)
@@ -8,7 +10,30 @@ News API (similar to Reddit) containing articles, topics, comments and users dat
 - Knex - for seeding and migrations to database
 - Mocha and Chai for testing endpoints and utils
 - Nodemon - to run on port 
-- Insomnia Core - to test the API endpoints return the correct data
+- Insomnia Core - to test the API endpoints are working and returning the correct data
+
+## Setting up a database:
+I created a file named **setup.sql** which will create my database when the command **npm run setup-dbs** is run It will drop the databaseif it already exists, so it can be created again as fresh:
+```
+DROP DATABASE IF EXISTS nc_news_test;
+DROP DATABASE IF EXISTS nc_news;
+
+CREATE DATABASE nc_news_test;
+CREATE DATABASE nc_news;
+
+```
+
+## Creating Schemas
+Tables and their columns are created via the files in the migrations folder, using the command **knex.schema.createTable**. Here I set what data type to expect in the columns, and set a primary key. For example:
+```
+exports.up = function(knex) {
+  return knex.schema.createTable('topics', (topicsTable) => {
+      topicsTable.text('slug').notNullable().primary(); 
+      topicsTable.text('description').notNullable();
+  })
+};
+
+```
 
 
 ## Frontend
@@ -17,6 +42,8 @@ News API (similar to Reddit) containing articles, topics, comments and users dat
 ---
 
 # API Endpoints
+
+- [My API is hosted on Heroku](https://seddit-news-api.herokuapp.com/)
 
 ## GET /api/topics
 Example response 
