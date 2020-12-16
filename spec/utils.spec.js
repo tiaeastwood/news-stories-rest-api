@@ -7,7 +7,7 @@ const {
 
 
 
-describe('convertTimestampToDate', () => {
+describe.only('convertTimestampToDate', () => {
   it('returns a new object', () => {
     const timestamp = 1557572706232;
     const input = { created_at: timestamp };

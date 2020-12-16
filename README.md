@@ -3,12 +3,13 @@
 News API (similar to Reddit) containing articles, topics, comments and users data.
 
 ## Tech
-- postgress (pg)
-- express
-- knex
-- nodemon
-- Jest
-- supertest
+- SQL Postgress (pg)
+- Express
+- Knex - for seeding and migrations to database
+- Mocha and Chai for testing endpoints and utils
+- Nodemon - to run on port 
+- Insomnia Core - to test the API endpoints return the correct data
+
 
 ## Frontend
 - 🎨[Link to the frontend code repository, built with React](https://github.com/tiaeastwood/seddit)
