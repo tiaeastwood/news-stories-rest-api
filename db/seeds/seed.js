@@ -1,35 +1,23 @@
-
+const { topicData, userData, articleData, commentData } = require('../data');
 const {
-  topicData,
-  articleData,
-  commentData,
-  userData,
-} = require('../data/index.js');
+  convertTimestampToDate,
+  createRef,
+  formatComments,
+} = require('../../utils');
 
-const { timestampConverter, makeRefObj, formatComments  } = require('../utils/data-manipulation.js')
+exports.seed = async knex => {
+  await knex.migrate.rollback();
+  await knex.migrate.latest();
 
+  const topicsPromise = knex('topics').insert(topicData, '*');
+  const usersPromise = knex('users').insert(userData, '*');
+  await Promise.all([topicsPromise, usersPromise]);
 
-exports.seed = function (knex) {
-  return knex.migrate
-    .rollback()
-    .then(() => knex.migrate.latest())
-    .then(() => {
-      return knex('topics')
-        .insert(topicData)
-        .returning('*')
-    }).then(()=> {
-      return knex('users')
-        .insert(userData)
-        .returning('*')
-    }).then(() => {
-      return knex('articles')
-      .insert(timestampConverter(articleData))
-      .returning('*')
-    }).then((articles) => {
-      const objRef = makeRefObj(articles, 'title', 'article_id');
-      const formattedComments = formatComments(commentData, objRef);
-      return knex('comments')
-      .insert(timestampConverter(formattedComments))
-      .returning('*')
-  })
+  const formattedArticleData = articleData.map(convertTimestampToDate);
+  console.log(formattedArticleData)
+  const articleRows = await knex('articles').insert(formattedArticleData, '*');
+
+  const articleIdLookup = createRef(articleRows, 'title', 'article_id');
+  const formattedCommentData = formatComments(commentData, articleIdLookup);
+  return knex('comments').insert(formattedCommentData);
 };
