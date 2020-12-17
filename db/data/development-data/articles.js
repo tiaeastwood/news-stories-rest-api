@@ -92,96 +92,6 @@ module.exports = [
     created_at: 1500291294879,
   },
   {
-    title: "What does Jose Mourinho's handwriting say about his personality?",
-    topic: 'football',
-    author: 'weegembump',
-    image: '',
-    body:
-      "Jose Mourinho was at The O2 on Sunday night to watch Dominic Thiem in action against Novak Djokovic. Thiem took the first set before Djokovic fought back to claim the victory, but Manchester United's manager was clearly impressed with the Austrian's performance.",
-    created_at: 1523906972774,
-  },
-  {
-    title: 'Who Will Manage Your Club in 2021?',
-    topic: 'football',
-    author: 'happyamy2016',
-    image: '',
-    body:
-      'Managerial changes are too common in the modern day game. Already in the 16/17 season, we have seen 14 managers lose their job from the Premier League to League Two. Swansea’s Francesco Guidolin became the first top division manager to lose his job but already question marks are raised regarding the future of the likes of David Moyes and Mike Phelan.',
-    created_at: 1472144905177,
-  },
-  {
-    title: 'Why do England managers keep making the same mistakes?',
-    topic: 'football',
-    author: 'tickle122',
-    image: '',
-    body:
-      'When Roy Hodgson resigned after this summer’s debacle, the England managerial merry go-round set into motion raising hopes that change would improve the nations fortunes.  In came Sam Allardyce but the same old squad was announced – apart from Michail Antonio – resulting in a similar type performance that was customary this summer. I was an advocate of Big Sam’s appointment because of the fact he managed down the league and could see that talent lay beyond just the big clubs in the country. Roy had many faults but the biggest frustration for me was he failed to utilise an already diminished pool of English players by continuing to pick the so called elite players – who are all tainted with failure. To be fair to Allardyce his first England game came so early in the season that it made making whole sale changes difficult. We shall never know if he would have picked different players. Since he left the job it was up to Gareth Southgate to take on the mantle and again hope arose that he may start to pick some of the talented under 21s that he has worked with over the last five years.',
-    created_at: 1489429710045,
-  },
-  {
-    title: 'History of FC Barcelona',
-    topic: 'football',
-    author: 'weegembump',
-    image: '',
-    body:
-      "The history of Futbol Club Barcelona goes from the football club's founding in 1899 and up to current time. FC Barcelona, also known simply as Barcelona and familiarly as Barça, is based in Barcelona, Catalonia, Spain. The team was founded in 1899 by a group of Swiss, English and Spanish footballers led by Joan Gamper. The club played amateur football until 1910 in various regional competitions. In 1910, the club participated in their first of many European competitions, and has since amassed ten UEFA trophies and a sextuple. In 1928, Barcelona co-founded La Liga, the top-tier in Spanish football, along with a string of other clubs. As of 2016, Barcelona has never been relegated from La Liga, a record they share with Athletic Bilbao and arch-rival Real Madrid. The history of Barcelona has often been politically. Though it is a club created and run by foreigners, Barcelona gradually became a club associated with Catalan values. In Spain's transition to autocracy in 1925, Catalonia became increasingly hostile towards the central government in Madrid. The hostility enhanced Barcelona's image as a focal point for Catalonism, and when Francisco Franco banned the use of the Catalan language, the stadium of Barcelona became one of the few places the people could express their dissatisfaction. The Spanish transition to democracy in 1978 has not dampened the club's image of Catalan pride. In the 2000s – a period of sporting success in the club and an increased focus on Catalan players – club officials have openly called for Catalonia to become an independent state.",
-    created_at: 1518899923448,
-  },
-  {
-    title: 'Which current Premier League manager was the best player?',
-    topic: 'football',
-    author: 'cooljmessy',
-    image: '',
-    body:
-      "Premier League managers work with some of the top players in world football - but were they any good in their day? From European Cup and league title winners to one manager who only played at university, there's a diverse range of experience among the top-flight bosses. We've taken a look at the playing achievements and ability of the current Premier League managers and ranked them. Read on to see who ranks where...",
-    created_at: 1468359811740,
-  },
-  {
-    title: 'The People Tracking Every Touch, Pass And Tackle in the World Cup',
-    topic: 'football',
-    author: 'grumpy19',
-    image: '',
-    body:
-      'With each click and drag of a mouse, young soccer fanatics are creating the building blocks of the advanced stats that are changing how the sport is played, watched and analyzed. Opta and Prozone are among the companies that have taken soccer stats far beyond goals and saves, into the realm of pass completion percentage, defensive touches, percentage of aerial balls won, tackle percentage and goals scored above expectation. Cameras alone can’t process all these stats. So companies employ people — mostly young, mostly male, most logging matches in their spare time as a second job — to watch matches and document every event. Their work has helped develop stats that capture the value of players who don’t score many goals, but who set them up with pinpoint passing and hustle. Teams use advanced stats to decide which players to buy and put on the pitch. And fans, whether they like it or not, read and hear more numbers than ever before about this sport that for so long bucked the sports-analytics trend.',
-    created_at: 1522206238717,
-  },
-  {
-    title: 'Who are the most followed clubs and players on Instagram?',
-    topic: 'football',
-    author: 'jessjelly',
-    image: '',
-    body:
-      "Manchester United are the UK's most popular club on Instagram, with over 14m people following their account for their latest photos and videos. United's total number of followers is over six million more than second-placed Arsenal (8.1m), while Chelsea are third on the list with 7.7m followers, according to data exclusively compiled for Sky Sports. Instagram has a 500m-strong community, with one in three people on the social media site (around 165m) following a sports account.",
-    created_at: 1501087741355,
-  },
-  {
-    title: 'History of Football',
-    topic: 'football',
-    author: 'tickle122',
-    image: '',
-    body:
-      'It may come as a surprise to many, but football has a long and interesting history; sources suggest that the sport was first introduced in England as early as 1170 when an account describes youths going to the fields for a ‘game of ball’. Aspects of the game can even be traced back to as early as the second and third century BC in China. Sources taken from military manuals at the time describe an exercise called Tsu’ Chu, in which opponents used a leather ball filled with feathers and hair. The aim was to get the ball into a small net fixed on to bamboo canes while also defending themselves from attacks. Variations of the game are also documented in Egyptian and Greek society, proving that the sport has a long tradition throughout history.',
-    created_at: 1507623496497,
-  },
-  {
-    title: 'Agility Training Drills For Football Players',
-    topic: 'football',
-    author: 'tickle122',
-    image: '',
-    body:
-      'There are so many areas of focus when it comes to football training, from strength training to ensure you can muscle past the opposition to endurance training to help you perform at your best for the 90 minutes of play. However, agility training should never be lost in the mix when planning sessions, as these drills will help you to change direction without losing balance, speed or strength. As a result, your body’s alignment will improve, your reaction speeds lowered and the chance of injury on the pitch reduced. When planning agility training drills for football players, MaxiNutrition believes coaches should look towards cones and ladders. The following guide explains how to use both pieces of equipment effectively:',
-    created_at: 1475720706725,
-  },
-  {
-    title: 'Defensive Metrics: Measuring the Intensity of a High Press',
-    topic: 'football',
-    author: 'tickle122',
-    image: '',
-    body:
-      'In this article, with the use of detailed Opta data, I am going to create a metric that I believe can quantify the extent and aggression of high presses employed by teams, both over a season and in any specific match. I’m going to see if it is possible define the intensity of a press with the use of numbers, more specifically by using some of the events that Opta record. Why would anyone want to do this? Well, for pretty much the same reason that we undertake any analytics study. If we can develop an objective scale which measures the intensity of a press then coaches can quickly see at a glance the strength, or otherwise, of the high pressing that their opposition has utilised in recent games. Teams or fans can also assess how much pressure their team exerted on the opposition in deep positions, and who knows, perhaps in time we will be able to assess the effectiveness that individual players have on the ability of their team to press. In essence we can take what is otherwise a subjective description and reduce it to one number so that it allows for comparison, analysis and ranking, if so desired.',
-    created_at: 1485410305946,
-  },
-  {
     title: 'Sweet potato & butternut squash soup with lemon & garlic toast',
     topic: 'cooking',
     author: 'weegembump',
@@ -252,5 +162,32 @@ module.exports = [
     body:
       'The chef Richard McGeown has faced bigger culinary challenges in his distinguished career than frying a meat patty in a little sunflower oil and butter. But this time the eyes and cameras of hundreds of journalists in the room were fixed on the 5oz (140g) pink disc sizzling in his pan, one that had been five years and €250,000 in the making. This was the world’s first proper portion of cultured meat, a beef burger created by Mark Post, professor of physiology, and his team at Maastricht University in the Netherlands. Post (which rhymes with ‘lost’, not ‘ghost’) has been working on in vitro meat (IVM) since 2009. On 5 August this year he presented his cultured beef burger to the world as a ‘proof of concept’. Having shown that the technology works, Post believes that in a decade or so we could see commercial production of meat that has been grown in a lab rather than reared and slaughtered. The comforting illusion that supermarket trays of plastic-wrapped steaks are not pieces of dead animal might become a discomforting reality.',
     created_at: 1492163783248,
+  },
+  {
+    title: 'Why cats purr',
+    topic: 'cats',
+    author: 'tickle122',
+    image: 'https://images.unsplash.com/photo-1568043210943-0e8aac4b9734?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
+    body:
+      "Cat ipsum dolor sit amet, in the middle of the night i crawl onto your chest and purr gently to help you sleep and meowing chowing and wowing why dog in house? i'm the sole ruler of this home and its inhabitants smelly, stupid dogs, inferior furballs time for night-hunt, human freakout, but kitten is playing with dead mouse. Run as fast as i can into another room for no reason more napping, more napping all the napping is exhausting cat meoooow i iz master of hoomaan, not hoomaan master of i, oooh damn dat dog lick left leg for ninety minutes, still dirty for meow meow meow meow mama.",
+    created_at: 1608196380,
+  },
+  {
+    title: "These common houseplants are dangerous to cats",
+    topic: 'cats',
+    author: 'jessjelly',
+    image: 'https://images.unsplash.com/photo-1557246565-8a3d3ab5d7f6?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
+    body:
+      "Cat ipsum dolor sit amet, eat a rug and furry furry hairs everywhere oh no human coming lie on counter don't get off counter yet climb into cupboard and lick the salt off rice cakes fall asleep on the washing machine present belly, scratch hand when stroked. Immediately regret falling into bathtub purr ptracy. Curl up and sleep on the freshly laundered towels decide to want nothing to do with my owner today. Purr like an angel swipe at owner's legs dont wait for the storm to pass, dance in the rain but my slave human didn't give me any food so i pooped on the floor human is behind a closed door, emergency! abandoned! meeooowwww!!!",
+    created_at: 1608196380,
+  },
+  {
+    title: "Does my cat miss me when I'm at work?",
+    topic: 'cats',
+    author: 'jessjelly',
+    image: 'https://images.unsplash.com/photo-1516978101789-720eacb59e79?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
+    body:
+      "Cat ipsum dolor sit amet, shake treat bag. Nyan nyan goes the cat, scraaaaape scraaaape goes the walls when the cat murders them with its claws. Cats secretly make all the worlds muffins growl at dogs in my sleep annoy the old grumpy cat, start a fight and then retreat to wash when i lose lasers are tiny mice leave dead animals as gifts spend six hours per day washing, but still have a crusty butthole. Stare out the window the best thing in the universe is a cardboard box tuxedo cats always looking dapper. Meow to be let in.",
+    created_at: 1608196380,
   },
 ];
