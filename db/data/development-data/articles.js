@@ -170,7 +170,7 @@ module.exports = [
     image: 'https://images.unsplash.com/photo-1568043210943-0e8aac4b9734?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
     body:
       "Cat ipsum dolor sit amet, in the middle of the night i crawl onto your chest and purr gently to help you sleep and meowing chowing and wowing why dog in house? i'm the sole ruler of this home and its inhabitants smelly, stupid dogs, inferior furballs time for night-hunt, human freakout, but kitten is playing with dead mouse. Run as fast as i can into another room for no reason more napping, more napping all the napping is exhausting cat meoooow i iz master of hoomaan, not hoomaan master of i, oooh damn dat dog lick left leg for ninety minutes, still dirty for meow meow meow meow mama.",
-    created_at: 1608196380,
+    created_at: 1592163783250,
   },
   {
     title: "These common houseplants are dangerous to cats",
@@ -179,7 +179,7 @@ module.exports = [
     image: 'https://images.unsplash.com/photo-1557246565-8a3d3ab5d7f6?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
     body:
       "Cat ipsum dolor sit amet, eat a rug and furry furry hairs everywhere oh no human coming lie on counter don't get off counter yet climb into cupboard and lick the salt off rice cakes fall asleep on the washing machine present belly, scratch hand when stroked. Immediately regret falling into bathtub purr ptracy. Curl up and sleep on the freshly laundered towels decide to want nothing to do with my owner today. Purr like an angel swipe at owner's legs dont wait for the storm to pass, dance in the rain but my slave human didn't give me any food so i pooped on the floor human is behind a closed door, emergency! abandoned! meeooowwww!!!",
-    created_at: 1608196380,
+    created_at: 1593163783250,
   },
   {
     title: "Does my cat miss me when I'm at work?",
@@ -188,6 +188,15 @@ module.exports = [
     image: 'https://images.unsplash.com/photo-1516978101789-720eacb59e79?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
     body:
       "Cat ipsum dolor sit amet, shake treat bag. Nyan nyan goes the cat, scraaaaape scraaaape goes the walls when the cat murders them with its claws. Cats secretly make all the worlds muffins growl at dogs in my sleep annoy the old grumpy cat, start a fight and then retreat to wash when i lose lasers are tiny mice leave dead animals as gifts spend six hours per day washing, but still have a crusty butthole. Stare out the window the best thing in the universe is a cardboard box tuxedo cats always looking dapper. Meow to be let in.",
-    created_at: 1608196380,
+    created_at: 1594163783250,  
+  },
+  {
+    title: "The best cats for people with allergies",
+    topic: 'cats',
+    author: 'cooljmessy',
+    image: 'https://images.unsplash.com/photo-1601280494157-6a5106ad2896?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
+    body:
+      "Cat ipsum dolor sit amet, plop down in the middle where everybody walks. Mouse toilet paper attack claws fluff everywhere meow miao french ciao litterbox. Intrigued by the shower play with twist ties scratch my tummy actually i hate you now fight me, but Gate keepers of hell headbutt owner's knee but kitty time. Find empty spot in cupboard and sleep all day touch my tail, i shred your hand purrrr for catching very fast laser pointer. Kitty pounce, trip, faceplant you didn't see that no you didn't definitely didn't lick, lick, lick, and preen away the embarrassment so you're just gonna scroll by without saying meowdy?",
+    created_at: 1594163783250,  
   },
 ];
