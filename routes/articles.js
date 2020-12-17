@@ -3,6 +3,7 @@ const {
   getArticles,
   getArticleById,
   patchArticleById,
+  postNewArticle
 } = require('../controllers/articles');
 const { getComments, postComment } = require('../controllers/comments');
 const { withErrorHandling, methodNotAllowed } = require('../errors');
@@ -10,6 +11,7 @@ const { withErrorHandling, methodNotAllowed } = require('../errors');
 articlesRouter
   .route('/')
   .get(withErrorHandling(getArticles))
+  .post(withErrorHandling(postNewArticle))
   .all(methodNotAllowed);
 
 articlesRouter

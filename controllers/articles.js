@@ -2,6 +2,7 @@ const {
   selectArticles,
   selectArticleById,
   updateArticleById,
+  createNewArticle
 } = require('../models/articles');
 const { checkOrderQuery } = require('./utils');
 
@@ -27,4 +28,12 @@ exports.patchArticleById = async (req, res) => {
   const { article_id } = req.params;
   const article = await updateArticleById(article_id, req.body);
   res.send({ article });
+};
+
+
+exports.postNewArticle = async (req, res) => {
+  const { article_id } = req.params;
+  const { username: author, body, title, image, topic } = req.body;
+  const article = await createNewArticle({ article_id, author, body, title, image, topic });
+  res.status(201).send({ article });
 };
