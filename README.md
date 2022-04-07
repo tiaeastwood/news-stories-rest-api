@@ -2,18 +2,37 @@
 
 News article API containing articles, topics, comments and users data.
 This project uses psql to create a database that is seeded using queries via knex.
-I have set up API endpoints so that the data can be accessed by my [frontend application](https://github.com/tiaeastwood/seddit).
 
 ## Tech
-- SQL Postgress (pg)
+- SQL Postgres (pg)
 - Express
 - Knex - for seeding and migrations to database
 - Mocha and Chai for testing endpoints and utils
 - Nodemon - to run on port 
-- Insomnia Core - to test the API endpoints are working and returning the correct data
 
-## Setting up a database:
-I created a file named **setup.sql** which will create my database when the command **npm run setup-dbs** is run It will drop the databaseif it already exists, so it can be created again as fresh:
+---
+
+## Running the application
+
+### 1. Clone Repository
+```
+git clone https://github.com/tiaeastwood/news-stories-rest-api.git
+```
+### 2. Install dependancies
+```
+npm i
+
+// you also need psql configured on your machine
+```
+### 3. Set up the database:
+```
+npm run setup-db
+```
+
+---
+## Explanation
+
+I created a file named **setup.sql** which will create my database when the command **npm run setup-dbs** is run It will drop the database if it already exists, so it can be created again as fresh:
 ```
 DROP DATABASE IF EXISTS nc_news_test;
 DROP DATABASE IF EXISTS nc_news;
@@ -23,7 +42,7 @@ CREATE DATABASE nc_news;
 
 ```
 
-## Creating Schemas
+### Creating Schemas
 Tables and their columns are created via the files in the migrations folder, using the command **knex.schema.createTable**. Here I set what data type to expect in the columns, and set a primary key. For example:
 ```
 exports.up = function(knex) {
@@ -35,11 +54,6 @@ exports.up = function(knex) {
 
 ```
 
-
-## Frontend
-- 🎨[Link to the frontend code repository, built with React](https://github.com/tiaeastwood/seddit)
-
----
 
 # API Endpoints
 
