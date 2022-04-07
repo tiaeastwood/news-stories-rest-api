@@ -28,9 +28,17 @@ npm i
 ```
 npm run setup-db
 ```
+### 4. Seed (add data to) the database:
+```
+npm run seed
+```
+### 5. Run the node server via nodemon
+```
+npm run dev
+```
 
 ---
-## Explanation
+## SQL
 
 I created a file named **setup.sql** which will create my database when the command **npm run setup-dbs** is run It will drop the database if it already exists, so it can be created again as fresh:
 ```
@@ -42,7 +50,7 @@ CREATE DATABASE nc_news;
 
 ```
 
-### Creating Schemas
+## Creating Schemas
 Tables and their columns are created via the files in the migrations folder, using the command **knex.schema.createTable**. Here I set what data type to expect in the columns, and set a primary key. For example:
 ```
 exports.up = function(knex) {
@@ -56,8 +64,6 @@ exports.up = function(knex) {
 
 
 # API Endpoints
-
-- [My API is hosted on Heroku](https://seddit-news-api.herokuapp.com/)
 
 ## GET /api/topics
 Example response 
