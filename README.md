@@ -36,6 +36,10 @@ npm run seed
 ```
 npm run dev
 ```
+This runs the api on a server so you can query it. You should see the following in the terminal if successful:
+
+*[nodemon] starting `node listen.js`   
+Listening on port 9090...*
 
 ---
 ## SQL
